@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 設置CSS響應是網頁 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的空氣清淨機</title>
+    <style>
+        body{
+            background-color: #00DAFF;
+        }
+        div.display{
+            position:relative;
+            top: 20px;
+            background-color:#11D9CC;
+            border:2px;
+            border-style: outset;
+            border-color: rgb(12, 240, 43);
+            border-width: 5px;
+            width: 300px;
+            height: 300px;
+            padding: 10px;
+        }
+        div.control{
+            position:relative;
+            top: 20px;
+            background-color:#11D9CC;
+            border:2px;
+            border-style: outset;
+            border-color: rgb(12, 240, 43);
+            border-width: 5px;
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+        }
+        button{
+            margin-top: 3px;
+            margin-left: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="display">
+        <h2 style="text-align:left" id="pm">PM</h2>
+        <h1 style="text-align:center;font-size:30px">PM數值</h1>
+        <h3 style="text-align:right">ug/m3</h3>
+        
+        <h1 style="text-align:center;font-size:30px">現在風量:<a id="fan">Level1</a></h1>
+                
+    </div>
+    <div class="control">
+        <button type="button" onclick="PM_switch('PM1.0')">PM1.0</button>
+        <button type="button" onclick="PM_switch('PM2.5')">PM2.5</button>
+        <button type="button" onclick="PM_switch('PM10')">PM10</button><br>
+
+        <p>風量:</p>
+        <button type="button" onclick="fan_switch('Level1')">Level1</button>
+        <button type="button" onclick="fan_switch('Level2')">Level2</button>
+        <button type="button" onclick="fan_switch('Level3')">Level3</button>
+        <button type="button" onclick="fan_switch('Level4')">Level4</button>
+        <button type="button" onclick="fan_switch('Level5')">Level5</button>
+    </div>
+    <script>
+        function PM_switch(value){
+            document.getElementById("pm").innerHTML=value;
+        }
+        function fan_switch(value){
+            document.getElementById("fan").innerHTML=value;
+        }
+    </script>
+</body>
+</html>
